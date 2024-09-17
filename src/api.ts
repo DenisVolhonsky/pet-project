@@ -1,7 +1,7 @@
-import axios from "axios";
-import { User } from "./types";
+import axios from 'axios';
+import { User } from './types';
 
-const API_URL = "https://jsonplaceholder.typicode.com/users";
+const API_URL = 'https://66e95d1987e41760944921fc.mockapi.io/api/v1/users';
 
 export const getUsers = async (): Promise<User[]> => {
   const response = await axios.get<User[]>(API_URL);
@@ -15,7 +15,7 @@ export const createUser = async (user: User): Promise<User | null> => {
 
 export const updateUser = async (
   userId: number,
-  updatedUser: User
+  updatedUser: User,
 ): Promise<User> => {
   const response = await axios.put<User>(`${API_URL}/${userId}`, updatedUser);
   return response.data;
