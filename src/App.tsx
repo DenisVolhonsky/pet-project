@@ -1,18 +1,25 @@
+import { useState } from 'react';
 import { useMutation, useQuery, useQueryClient } from 'react-query';
 import { User } from './types';
 import { createUser, deleteUser, getUsers } from './api';
-import { TodoList } from './components/TodoList';
-import './App.css';
-import MapComponent from './components/MapComponent';
+import { MapComponent, Modal, Popup, TodoList } from './components';
+import { useGeolocation } from './hooks';
+import './styles/App.css';
 
 function App() {
   const queryClient = useQueryClient();
-
   const {
     data: users = [],
     isLoading,
     error,
   } = useQuery<User[]>(['users'], getUsers);
+
+  const myLocation = useGeolocation();
+
+  const [isPopupVisible, setPopupVisible] = useState(false);
+  const [isModalVisible, setModalVisible] = useState(false);
+
+  const toggleModal = () => setModalVisible(!isModalVisible);
 
   const addUserMutation = useMutation(createUser, {
     onSuccess: () => {
@@ -29,7 +36,7 @@ function App() {
     const newUser: User = {
       id: Date.now(),
       name,
-      coordinates: [48.350125, 10.876974],
+      coordinates: myLocation,
     };
     addUserMutation.mutate(newUser);
   };
@@ -37,16 +44,28 @@ function App() {
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error loading users</div>;
 
-  console.log(users);
-
   return (
     <div className="App">
-      <TodoList
-        users={users}
-        handleDelete={handleDelete}
-        onAddUser={handleAddUser}
-      />
-      <MapComponent users={users} />
+      <Modal title="My modal" isVisible={isModalVisible} onClose={toggleModal}>
+        <p>Content of modal window</p>
+      </Modal>
+      <button
+        className="popup-button"
+        onMouseEnter={() => setPopupVisible(true)}
+        onMouseLeave={() => setPopupVisible(false)}
+        onClick={toggleModal}
+      >
+        Click me!!!
+      </button>
+      <div className="app-container">
+        <Popup message="This is popup message" isVisible={isPopupVisible} />
+        <TodoList
+          users={users}
+          handleDelete={handleDelete}
+          onAddUser={handleAddUser}
+        />
+        <MapComponent users={users} />
+      </div>
     </div>
   );
 }
