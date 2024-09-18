@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { User } from '../types';
-import Todo from './Todo';
+import { Todo } from '../components';
 
 interface TodoListProps {
   users: User[];
@@ -8,7 +8,7 @@ interface TodoListProps {
   onAddUser: (name: string) => void;
 }
 
-export const TodoList: React.FC<TodoListProps> = ({
+const TodoList: React.FC<TodoListProps> = ({
   users,
   handleDelete,
   onAddUser,
@@ -44,7 +44,7 @@ export const TodoList: React.FC<TodoListProps> = ({
               }}
             />
             <button
-              className="mt-2 w-full bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700"
+              className="mt-2 w-full bg-indigo-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700"
               onClick={handleAdd}
             >
               Add user
@@ -55,3 +55,5 @@ export const TodoList: React.FC<TodoListProps> = ({
     </div>
   );
 };
+
+export default TodoList;
