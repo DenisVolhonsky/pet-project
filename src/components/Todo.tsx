@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { User } from '../types';
+import { MyContext } from '../Context';
 
 interface TodoProps {
   user: User;
@@ -7,6 +8,12 @@ interface TodoProps {
 }
 
 const Todo: React.FC<TodoProps> = ({ user, handleDelete }) => {
+  const context = useContext(MyContext);
+
+  if (!context) return <div>Loading...</div>;
+
+  context && console.log(context);
+
   return (
     <li className="flex justify-between items-center py-2 border-b border-gray-200">
       <span>{user.name}</span>

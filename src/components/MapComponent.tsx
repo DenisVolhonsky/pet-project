@@ -1,8 +1,8 @@
+import React from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { Icon, LatLngExpression } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { User } from '../types';
-import React from 'react';
 
 interface MarkerComponentProps {
   users: User[];
