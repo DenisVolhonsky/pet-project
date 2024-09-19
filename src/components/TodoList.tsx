@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { User } from '../types';
 import { Todo } from '../components';
+import React from 'react';
 
 interface TodoListProps {
   users: User[];
@@ -56,4 +57,4 @@ const TodoList: React.FC<TodoListProps> = ({
   );
 };
 
-export default TodoList;
+export default React.memo(TodoList);

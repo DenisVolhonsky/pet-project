@@ -1,3 +1,4 @@
+import React from 'react';
 import { User } from '../types';
 
 interface TodoProps {
@@ -19,4 +20,4 @@ const Todo: React.FC<TodoProps> = ({ user, handleDelete }) => {
   );
 };
 
-export default Todo;
+export default React.memo(Todo);

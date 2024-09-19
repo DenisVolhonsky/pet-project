@@ -2,6 +2,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { Icon, LatLngExpression } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { User } from '../types';
+import React from 'react';
 
 interface MarkerComponentProps {
   users: User[];
@@ -34,4 +35,4 @@ const MapComponent: React.FC<MarkerComponentProps> = ({ users }) => {
   );
 };
 
-export default MapComponent;
+export default React.memo(MapComponent);
