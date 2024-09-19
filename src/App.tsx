@@ -1,6 +1,6 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { User } from './types';
-import { MapComponent, Modal, Popup, TodoList } from './components';
+import { Counter, MapComponent, Modal, Popup, TodoList } from './components';
 import { useGeolocation } from './hooks';
 import { mockUsers } from './mock';
 import './styles/App.css';
@@ -46,6 +46,9 @@ const App: React.FC = () => {
       >
         Click me!!!
       </button>
+      <Counter>
+        <span>Counter:</span>
+      </Counter>
       <div className="app-container">
         <Popup message="This is popup message" isVisible={isPopupVisible} />
         <TodoList

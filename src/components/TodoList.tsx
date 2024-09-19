@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { User } from '../types';
 import { Todo } from '../components';
 import React from 'react';
@@ -23,7 +23,16 @@ const TodoList: React.FC<TodoListProps> = ({
     }
   };
 
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, []);
+
   console.log(name);
+
   return (
     <div className="max-w-md bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
       <div className="md:flex">
@@ -36,6 +45,7 @@ const TodoList: React.FC<TodoListProps> = ({
           </ul>
           <div className="mt-4">
             <input
+              ref={inputRef}
               className="border rounded w-full py-2 px-3 text-gray-700 focus:outline-none"
               type="text"
               placeholder="New user..."
