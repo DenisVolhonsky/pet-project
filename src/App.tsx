@@ -28,7 +28,7 @@ const App: React.FC = () => {
       };
       setUsers((prevUsers) => [...prevUsers, newUser]);
     },
-    [myLocation],
+    [myLocation]
   );
 
   console.log(users);

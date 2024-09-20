@@ -9,4 +9,4 @@ module.exports = {
     '^axios$': require.resolve('axios'), // Принудительно используем CommonJS версию
   },
   transformIgnorePatterns: ['node_modules/(?!axios)'],
-};]
+};

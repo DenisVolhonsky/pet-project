@@ -15,5 +15,5 @@ root.render(
         <App />
       </QueryClientProvider>
     </MyContextProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
 );
