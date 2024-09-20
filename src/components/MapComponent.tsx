@@ -19,7 +19,7 @@ const MapComponent: React.FC<MarkerComponentProps> = ({ users }) => {
   return (
     <MapContainer
       center={position}
-      zoom={2}
+      zoom={5}
       style={{ height: '90vh', width: '70%' }}
     >
       <TileLayer

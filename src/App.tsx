@@ -1,6 +1,14 @@
 import { useCallback, useState } from 'react';
 import { User } from './types';
-import { Counter, MapComponent, Modal, Popup, TodoList } from './components';
+import {
+  Counter,
+  UncontrolledForm,
+  MapComponent,
+  Modal,
+  Popup,
+  TodoList,
+  ControlledForm,
+} from './components';
 import { useGeolocation } from './hooks';
 import { mockUsers } from './mock';
 import './styles/App.css';
@@ -57,6 +65,10 @@ const App: React.FC = () => {
           onAddUser={handleAddUser}
         />
         <MapComponent users={users} />
+      </div>
+      <div className="flex justify-end">
+        <UncontrolledForm />
+        <ControlledForm />
       </div>
     </div>
   );
