@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Counter component snapshot should match the snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    Test Counter
+    <span>
+      0
+    </span>
+    <button
+      class="mt-2 bg-indigo-500 text-white p-1 mr-2 ml-2"
+    >
+      +
+    </button>
+    <button
+      class="mt-2 bg-indigo-500 text-white p-1"
+    >
+      -
+    </button>
+  </div>
+</DocumentFragment>
+`;

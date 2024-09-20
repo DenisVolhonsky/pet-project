@@ -63,3 +63,9 @@ describe('Counter component', () => {
   });
 });
 
+describe('Counter component snapshot', () => {
+  it('should match the snapshot', () => {
+    const { asFragment } = render(<Counter>Test Counter</Counter>);
+    expect(asFragment()).toMatchSnapshot();
+  });
+});

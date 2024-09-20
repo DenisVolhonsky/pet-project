@@ -1,19 +1,19 @@
 {
-    "compilerOptions": {
-        "allowSyntheticDefaultImports": true,
-        "esModuleInterop": true,       
-        "target": "es5",
-        "lib": [
-            "dom",
-            "esnext"
-        ],
-        "jsx": "react-jsx",
-        "module": "esnext",
-        "moduleResolution": "node",
-        "strict": true,
-        "noEmit": true
-    },
-    "include": [
-        "src"
-    ]
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "target": "es5",
+    "lib": [
+      "dom",
+      "esnext"
+    ],
+    "jsx": "react-jsx",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "noEmit": true
+  },
+  "include": [
+    "src"
+  ]
 }

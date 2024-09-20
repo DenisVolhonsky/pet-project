@@ -15,7 +15,7 @@ export const createUser = async (user: User): Promise<User | null> => {
 
 export const updateUser = async (
   userId: number,
-  updatedUser: User,
+  updatedUser: User
 ): Promise<User> => {
   const response = await axios.put<User>(`${API_URL}/${userId}`, updatedUser);
   return response.data;
