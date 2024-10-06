@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+// get current location
 export const useGeolocation = () => {
   const [myLocation, setMylocation] = useState<[number, number, number?]>([
     0, 0,
