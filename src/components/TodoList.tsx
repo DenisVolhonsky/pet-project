@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { User } from '../types';
-import { Todo } from '../components';
+import { Todo } from '.';
 import React from 'react';
 
 interface TodoListProps {
